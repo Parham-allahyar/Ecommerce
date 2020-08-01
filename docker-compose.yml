@@ -45,17 +45,17 @@ services:
       SERVICE_NAME: mysql
     networks:
       - laravel
-  php:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: php
+  composer:
+    image: composer:latest
+    container_name: composer
     volumes:
       - ./api:/var/www/html
-    ports:
-      - "9000:9000"
+    working_dir: /var/www/html
+    depends_on:
+      - php
     networks:
       - laravel
+
       
    
     
