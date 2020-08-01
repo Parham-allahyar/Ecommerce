@@ -64,6 +64,14 @@ services:
       - ./client:/var/www/client
     networks:
       - laravel
+      
+  npm:
+    image: node:13.7
+    container_name: npm
+    volumes:
+      - ./api:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: ["npm"]
 
 
    
