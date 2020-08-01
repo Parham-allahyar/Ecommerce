@@ -1,0 +1,5 @@
+{
+    "require": {
+        "ghasedak/php": "dev-master"
+    }
+}
