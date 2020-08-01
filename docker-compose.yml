@@ -55,7 +55,16 @@ services:
       - php
     networks:
       - laravel
+  client:
+    container_name: client
+    build:
+      context: client
+      dockerfile: Dockerfile
+    volumes:
+      - ./client:/var/www/client
+    networks:
+      - laravel
 
-      
+
    
     
