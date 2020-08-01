@@ -64,7 +64,7 @@ services:
       - ./client:/var/www/client
     networks:
       - laravel
-      
+
   npm:
     image: node:13.7
     container_name: npm
@@ -72,6 +72,20 @@ services:
       - ./api:/var/www/html
     working_dir: /var/www/html
     entrypoint: ["npm"]
+    
+  artisan:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: artisan
+    volumes:
+      - ./api:/var/www/html
+    depends_on:
+      - mysql
+    working_dir: /var/www/html
+    entrypoint: ["php", "/var/www/html/artisan"]
+    networks:
+      - laravel
 
 
    
