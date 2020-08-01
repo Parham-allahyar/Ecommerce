@@ -44,6 +44,18 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
-      - laravel   
+      - laravel
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php
+    volumes:
+      - ./api:/var/www/html
+    ports:
+      - "9000:9000"
+    networks:
+      - laravel
+      
    
     
