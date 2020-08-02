@@ -26,9 +26,9 @@ class AuthController extends Controller
         }
 
         //Generate Verification Code
-
+        $code = random_int(100000, 999999);
        // Cache Verification Code
-       storeCodeFacade::saveCode();
+       storeCodeFacade::saveCode($code, $user->id);
 
 
     }
