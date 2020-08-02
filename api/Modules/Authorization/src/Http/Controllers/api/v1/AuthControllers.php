@@ -6,6 +6,7 @@ use Authorization\Facades\userProviderFacade;
 use Authorization\Facades\storeCodeFacade;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Notification\Notification;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -30,7 +31,8 @@ class AuthController extends Controller
        // Cache Verification Code
        storeCodeFacade::saveCode($code, $user->id);
 
-
+       $notification = new Notification;
+       $notification->sendsms($user->id, $code);
     }
     public function auth()
     {
