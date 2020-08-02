@@ -13,7 +13,6 @@ class storeCodeFacade extends Facade
 
     public static function ShouldProxyTo($class)
     {
-
         app()->singleton(self::getFacadeAccessor(), $class);
     }
 
