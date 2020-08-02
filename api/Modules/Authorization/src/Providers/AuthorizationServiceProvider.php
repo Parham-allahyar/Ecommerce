@@ -3,7 +3,7 @@
 namespace Authorization\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Support\Facades\Route;
 class AuthorizationServiceProvider extends ServiceProvider
 {
 
@@ -15,6 +15,13 @@ class AuthorizationServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        //
+        $this->defineRoutes();
+    }
+
+    private function defineRoutes()
+    {
+        Route::middleware('api')
+            ->namespace($this->namespace)
+            ->group(__DIR__ . '/../routes.php');
     }
 }
