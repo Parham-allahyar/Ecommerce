@@ -10,7 +10,7 @@ use Authorization\Repositories\UserRepository;
 use Authorization\PhpClass\storeCode;
 class AuthorizationServiceProvider extends ServiceProvider
 {
-
+    private $namespace = 'Authorization\Http\Controllers';
     public function register()
     {
         userProviderFacade::ShouldProxyTo(UserRepository::class);
@@ -27,6 +27,6 @@ class AuthorizationServiceProvider extends ServiceProvider
     {
         Route::middleware('api')
             ->namespace($this->namespace)
-            ->group(__DIR__ . '/../routes.php');
+            ->group(__DIR__ . './../routes.php');
     }
 }
