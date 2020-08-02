@@ -18,6 +18,10 @@ class AuthController extends Controller
 
       //Find User
       $user = userProviderFacade::getUserByPhoneNumber($phoneNumber);
+      if ($user == null) {
+        userProviderFacade::createUser($phoneNumber);
+        $user = userProviderFacade::getUserByPhoneNumber($phoneNumber);
+    }
 
     }
     public function auth()
