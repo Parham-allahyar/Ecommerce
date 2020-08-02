@@ -7,7 +7,7 @@ class Notification
     public function __call($method, $arguments)
     {
      //Catch Class Name
-    $providerPath = __NAMESPACE__ . '\NotifProvider\\' .  substr($method, 4) . 'Provider';
+    $providerPath = __NAMESPACE__ . '\Provider\\' .  substr($method, 4) . 'Provider';
      //make Object
      $providerInstance = new $providerPath(...$arguments);
      //Return Send Method
