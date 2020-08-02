@@ -36,7 +36,8 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Notification\\": "Modules/Notification"
+            "Notification\\": "Modules/Notification",
+            "Authorization\\": "Modules/Authorization/src"
         },
         "classmap": [
             "database/seeds",

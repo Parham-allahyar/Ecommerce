@@ -178,7 +178,9 @@ return [
         /*
          * Notification Service Providers...
          */
-       Notification\Providers\NotificationServiceProvider::class,
+         Notification\NotificationServiceProvider::class,
+
+         
 
     ],
 

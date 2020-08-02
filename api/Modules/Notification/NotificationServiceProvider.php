@@ -1,6 +1,6 @@
 <?php
 
-namespace Notification\Providers;
+namespace Notification;
 
 use Illuminate\Support\ServiceProvider;
 
