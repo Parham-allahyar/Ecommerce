@@ -19,12 +19,12 @@ class UserRepository
             ->first();
     }
 
-    public function createUser($userPhone)
+    public function createUser($phoneNumber)
     {
-        $data = [
-            'phone_Number'  => $userPhone
-        ];
-        User::create($data);
+
+        User::create([
+            'phone_Number' => $phoneNumber,
+        ]);
     }
 
 }
