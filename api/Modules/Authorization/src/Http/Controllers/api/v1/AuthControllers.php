@@ -3,6 +3,7 @@
 namespace Authorization\Http\Controllers\api\v1;
 
 use Authorization\Facades\userProviderFacade;
+use Authorization\Facades\storeCodeFacade;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,10 @@ class AuthController extends Controller
         }
 
         //Generate Verification Code
-        
+
+       // Cache Verification Code
+       storeCodeFacade::saveCode();
+
 
     }
     public function auth()
