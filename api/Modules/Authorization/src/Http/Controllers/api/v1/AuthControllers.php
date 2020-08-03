@@ -47,7 +47,7 @@ class AuthController extends Controller
             $token = auth()->setTTL(7200)->tokenById($userId);
             return $token;
         } else {
-          
+            return "hi";
         }
 
     }
