@@ -130,7 +130,10 @@ table {
 }
 
 
-
+html,
+body {
+  height: 100%;
+}
 
 
 
@@ -139,7 +142,7 @@ table {
 body {
 
     direction: rtl;
-    background-color: #F9FBFD;
+    background-color: #F5F5F5;
     text-align: right;
     font-family: Vazir, sans-serif;
     overflow-x: hidden;
